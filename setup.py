@@ -27,7 +27,7 @@ def setup():
     subprocess.call(f'powershell.exe rm {path}\\src.zip',
                     shell=True)
     # run client.py file
-    subprocess.call(f'{ps1_path}',
+    subprocess.call(f'powershell.exe {ps1_path}',
                     shell=True)
 ################################################ done ##################################################################
 # Running code ...
