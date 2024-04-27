@@ -1,0 +1,1 @@
+﻿Start-Process C:\Users\smart\AppData\Roaming\src\Scripts\pythonw.exe C:\Users\smart\AppData\Roaming\client.pyw
